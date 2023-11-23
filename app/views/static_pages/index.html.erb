@@ -1,0 +1,90 @@
+<div data-controller="add-remove">
+  <div class="flex justify-between items-center py-6">
+    <h1 class="text-2xl font-semibold">Tonal</h1>
+
+    <div class="flex gap-6 items-center">
+      <div>
+        <label for="tonic">Tonic:</label>
+
+        <select name="tonic" id="tonic" class="rounded py-2 px-4" data-add-remove-target="tonic">
+          <option value="Ab">Ab</option>
+          <option value="A">A</option>
+          <option value="A#">A#</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+          <option value="Eb">Eb</option>
+          <option value="E">E</option>
+          <option value="F">F</option>
+          <option value="F#">F#</option>
+          <option value="G">G</option>
+          <option value="G#">G#</option>
+        </select>
+      </div>
+      <div>
+        <label for="tonic">Mode:</label>
+
+        <select name="mode" id="mode" class="rounded py-2 px-4" data-add-remove-target="mode">
+          <option value="ionian">Ionian</option>
+          <option value="dorian">Dorian</option>
+          <option value="phrygian">Phrygian</option>
+          <option value="lydian">Lydian</option>
+          <option value="mixolydian">Mixolydian</option>
+          <option value="aeolian">Aeolian</option>
+          <option value="locrian">Locrian</option>
+        </select>
+      </div>
+
+      <a href="#" class="py-2 px-4 bg-blue-200 rounded" data-action="click->add-remove#add:prevent">Add</a>
+    </div>
+  </div>
+
+  <template data-add-remove-target="template">
+    <div class="add-remove flex flex-col bg-slate-100 rounded p-6 text-xl gap-6" data-controller="mode" data-mode-name-value="MODE" data-mode-tonic-value="TONIC">
+      <div class="flex justify-between items-center">
+        <div data-mode-target="name" class="font-semibold"></div>
+        <a href="#" class="text-sm text-red-300" data-action="click->add-remove#remove:prevent">Remove</a>
+      </div>
+
+      <div class="grid grid-cols-7 gap-6 text-center">
+        <div class="p-6 bg-white rounded">
+          <div class="text-sm">1</div>
+          <span data-mode-target="first"></span>
+        </div>
+
+        <div class="p-6 bg-white rounded">
+          <div class="text-sm">2</div>
+          <span data-mode-target="second"></span>
+        </div>
+
+        <div class="p-6 bg-white rounded">
+          <div class="text-sm">3</div>
+          <span data-mode-target="third"></span>
+        </div>
+
+        <div class="p-6 bg-white rounded">
+          <div class="text-sm">4</div>
+          <span data-mode-target="fourth"></span>
+        </div>
+
+        <div class="p-6 bg-white rounded">
+          <div class="text-sm">5</div>
+          <span data-mode-target="fifth"></span>
+        </div>
+
+        <div class="p-6 bg-white rounded">
+          <div class="text-sm">6</div>
+          <span data-mode-target="sixth"></span>
+        </div>
+
+        <div class="p-6 bg-white rounded">
+          <div class="text-sm">7</div>
+          <span data-mode-target="seventh"></span>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <div class="flex flex-col gap-6" data-add-remove-target="list">
+  </div>
+</div>
